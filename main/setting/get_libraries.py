@@ -1,6 +1,4 @@
 # encoding:utf-8
-
-
 import requests
 import json
 
@@ -23,8 +21,8 @@ def get_libraries():
 
 def make_isort_setting_file():
     new_libraries = get_libraries()
-    new_path = "src/isort_setting_new.txt"
-    with open(new_path) as f:
+    path = "setting/isort_setting.txt"
+    with open(path) as f:
         ls = f.readlines()
 
     for i in range(len(ls)):
@@ -33,10 +31,8 @@ def make_isort_setting_file():
             libraries = list(set(libraries + new_libraries)) # add new
             ls[i] = "known_third_party=" + ",".join(libraries) + "\n"
 
-    with open(new_path, mode = "w") as f:
+    with open(path, mode = "w") as f:
         f.writelines(ls)
 
 if __name__ == "__main__":
     make_isort_setting_file()
-
-
