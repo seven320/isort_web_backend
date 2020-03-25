@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="defaultLanguage" content="en">
+    <meta name="availableLanguages" content="en, es, fr, ja, pt_BR, uk, el, de">
+
+    
+
+    <title>Statistics · PyPI</title>
+    <meta name="description" content="The Python Package Index (PyPI) is a repository of software for the Python programming language.">
+
+    <link rel="stylesheet" href="/static/css/warehouse.b106f093.css">
+    <link rel="stylesheet" href="/static/css/fontawesome.91df071f.css">
+    <link rel="stylesheet" href="/static/css/regular.8819f1a9.css">
+    <link rel="stylesheet" href="/static/css/solid.002489ee.css">
+    <link rel="stylesheet" href="/static/css/brands.0c9eb08b.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic%7CSource+Code+Pro:500">
+    <noscript>
+      <link rel="stylesheet" href="/static/css/noscript.69d08c82.css">
+    </noscript>
+
+    
+
+    <link rel="icon" href="/static/images/favicon.6a76275d.ico" type="image/x-icon">
+
+    <link rel="alternate" type="application/rss+xml" title="RSS: 40 latest updates" href="/rss/updates.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS: 40 newest packages" href="/rss/packages.xml">
+    
+
+    <meta property="og:url" content="https://pypi.org/stats/">
+    <meta property="og:site_name" content="PyPI">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://pypi.org/static/images/twitter.90915068.jpg">
+    <meta property="og:title" content="Statistics">
+    <meta property="og:description" content="The Python Package Index (PyPI) is a repository of software for the Python programming language.">
+
+    <link rel="search" type="application/opensearchdescription+xml" title="PyPI" href="/opensearch.xml">
+
+    
+    <script
+      src="https://cdn.ravenjs.com/3.26.2/raven.min.js"
+      integrity="sha384-D6LXy67EIC102DTuqypxwQsTHgiatlbvg7q/1YAWFb6lRyZ1lIZ6bGDsX7jxHNKA"
+      crossorigin="anonymous">
+    </script>
+    
+    <script async
+            data-ga-id="UA-55961911-1"
+            data-sentry-frontend-dsn="https://3a67b35c9dc248a191d761410b095861@sentry.io/1231155"
+            src="/static/js/warehouse.092c6255.js">
+    </script>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55961911-1"></script>
+    <script defer src="https://www.fastly-insights.com/insights.js?k=6a52360a-f306-421e-8ed5-7417d0d4a4e9&dnt=true"></script>
+  </head>
+
+  <body data-controller="viewport-toggle">
+    
+
+    <!-- Accessibility: this link should always be the first piece of content inside the body-->
+    <a href="#content" class="skip-to-content">Skip to main content</a>
+
+    <button type="button" class="button button--primary button--switch-to-mobile hidden" data-target="viewport-toggle.switchToMobile" data-action="viewport-toggle#switchToMobile">
+      Switch to mobile version
+    </button>
+
+    <div id="sticky-notifications" class="stick-to-top js-stick-to-top">
+      <!-- Add browser warning. Will show for ie9 and below -->
+      <!--[if IE]>
+      <div class="notification-bar notification-bar--warning" role="status">
+        <span class="notification-bar__icon">
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+          <span class="sr-only">Warning</span>
+        </span>
+        <span class="notification-bar__message">You are using an unsupported browser, upgrade to a newer version.</span>
+      </div>
+      <![endif]-->
+      
+      <noscript>
+      <div class="notification-bar notification-bar--warning" role="status">
+        
+        <span class="notification-bar__icon">
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+          <span class="sr-only">Warning</span>
+        </span>
+        <span class="notification-bar__message">Some features may not work without JavaScript. Please try enabling it if you encounter problems.</span>
+      </div>
+      </noscript>
+    </div>
+
+    
+      <div data-html-include="/_includes/flash-messages/">
+      </div>
+    
+
+    
+
+    
+      <div data-html-include="/_includes/session-notifications/">
+      </div>
+    
+
+    <header class="site-header ">
+      <div class="site-container">
+        <div class="split-layout">
+          
+          <div class="split-layout">
+            <div>
+              <a class="site-header__logo" href="/">
+                <img alt="PyPI" src="/static/images/logo-small.6eef541e.svg">
+              </a>
+            </div>
+
+            <form class="search-form search-form--primary" action="/search/" role="search">
+              <label for="search" class="sr-only">Search PyPI</label>
+              <input id="search" class="search-form__search" type="text" name="q" placeholder="Search projects" value="" autocomplete="off" autocapitalize="off" spellcheck="false">
+              
+              <button type="submit" class="search-form__button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <span class="sr-only">Search</span>
+              </button>
+            </form>
+          </div>
+          
+
+          <div data-html-include="/_includes/current-user-indicator/">
+            <div id="user-indicator" class="horizontal-menu horizontal-menu--light horizontal-menu--tall">
+  <nav class="horizontal-menu horizontal-menu--light horizontal-menu--tall hide-on-tablet" aria-label="Main navigation">
+    <ul>
+      <li class="horizontal-menu__item"><a href="/help/" class="horizontal-menu__link">Help</a></li>
+      <li class="horizontal-menu__item"><a href="https://donate.pypi.org" class="horizontal-menu__link">Donate</a></li>
+      <li class="horizontal-menu__item"><a href="/account/login/" class="horizontal-menu__link">Log in</a></li>
+      <li class="horizontal-menu__item"><a href="/account/register/" class="horizontal-menu__link">Register</a></li>
+    </ul>
+  </nav>
+  <nav class="dropdown dropdown--on-menu hidden show-on-tablet" aria-label="Main navigation">
+    <button type="button" class="horizontal-menu__link dropdown__trigger" aria-haspopup="true" aria-expanded="false" aria-label="View menu">
+      Menu
+      <span class="dropdown__trigger-caret">
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+      </span>
+    </button>
+    <ul class="dropdown__content" aria-hidden="true" aria-label="Main menu">
+      <li><a class="dropdown__link" href="/help/">Help</a></li>
+      <li><a class="dropdown__link" href="https://donate.pypi.org">Donate</a></li>
+      <li><a class="dropdown__link" href="/account/login/">Log in</a></li>
+      <li><a class="dropdown__link" href="/account/register/">Register</a></li>
+    </ul>
+  </nav>
+</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="mobile-search">
+      <form class="search-form search-form--fullwidth" action="/search/" role="search">
+        <label for="mobile-search" class="sr-only">Search PyPI</label>
+        <input id="mobile-search" class="search-form__search" type="text" name="q" placeholder="Search projects" value="" autocomplete="off" autocapitalize="off" spellcheck="false">
+        
+        <button type="submit" class="search-form__button">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <span class="sr-only">Search</span>
+        </button>
+      </form>
+    </div>
+    
+
+    <main id="content">
+      
+<div class="horizontal-section">
+  <div class="narrow-container">
+    <h1 class="page-title">PyPI statistics</h1>
+    <p>
+      We all love stats, so here are some useful statistics about PyPI. The statistics page is cached for 24 hours, so don't expect the numbers to be realtime.
+    </p>
+
+    <h2>Top projects by total package size</h2>
+    <p>
+      Here is a list of the top 100 projects based on the sum of their packages' sizes (in bytes).
+    </p>
+
+    <table class="table">
+      <caption class="sr-only">Statistics by project</caption>
+      <thead>
+        <tr>
+          <th scope="col">Project name</th>
+          <th scope="col">Sum of release files (bytes)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">All of PyPI</th>
+          <td>6.0 TB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet-cu80</th>
+          <td>204.7 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet-cu80mkl</th>
+          <td>191.5 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet-cu90</th>
+          <td>188.2 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">lalsuite</th>
+          <td>183.4 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet-cu92</th>
+          <td>176.9 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">catboost-dev</th>
+          <td>156.2 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet-cu90mkl</th>
+          <td>141.0 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet-cu92mkl</th>
+          <td>128.7 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet-cu100</th>
+          <td>128.2 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet-cu100mkl</th>
+          <td>121.4 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">frida</th>
+          <td>117.1 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">tf-nightly</th>
+          <td>108.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">tensorflow-io-nightly</th>
+          <td>103.4 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">tf-nightly-gpu</th>
+          <td>99.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">tensorflow-gpu</th>
+          <td>85.7 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet-mkl</th>
+          <td>84.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">tensorflow</th>
+          <td>82.9 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet-cu101</th>
+          <td>82.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">cupy-cuda91</th>
+          <td>80.9 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet-cu101mkl</th>
+          <td>77.9 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">cupy-cuda90</th>
+          <td>74.7 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">cupy-cuda92</th>
+          <td>72.8 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">paddlepaddle-gpu</th>
+          <td>69.1 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">OpenVisus</th>
+          <td>69.0 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">cupy-cuda100</th>
+          <td>65.2 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">cupy-cuda101</th>
+          <td>58.5 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">cupy-cuda80</th>
+          <td>52.9 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet</th>
+          <td>39.9 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">torch</th>
+          <td>37.7 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet-cu91</th>
+          <td>37.1 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">tf-nightly-cpu</th>
+          <td>36.3 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">deepspeech-gpu</th>
+          <td>30.7 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet-cu91mkl</th>
+          <td>30.3 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">catboost</th>
+          <td>29.5 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">tensorflow-io-2.0-preview</th>
+          <td>29.3 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">pyagrum-nightly</th>
+          <td>27.0 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">grpcio-tools</th>
+          <td>26.3 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">sickrage</th>
+          <td>24.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">CodeIntel</th>
+          <td>23.8 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">udata</th>
+          <td>21.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">scipy</th>
+          <td>21.2 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">opencv-contrib-python</th>
+          <td>20.8 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">tensorflow-rocm</th>
+          <td>20.5 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">opencv-python</th>
+          <td>19.3 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">allennlp-pvt-nightly</th>
+          <td>17.5 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">codeforlife-portal</th>
+          <td>17.2 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">Panda3D</th>
+          <td>17.2 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">numpy</th>
+          <td>16.5 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">opencv-contrib-python-headless</th>
+          <td>15.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">tendenci</th>
+          <td>14.4 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">cmake</th>
+          <td>14.4 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">pystan</th>
+          <td>14.1 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">rasterio</th>
+          <td>13.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">grpcio</th>
+          <td>13.4 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">paddlepaddle</th>
+          <td>13.2 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet-cu75</th>
+          <td>13.2 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">ovito</th>
+          <td>13.2 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">PySide2</th>
+          <td>12.9 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">opencv-python-headless</th>
+          <td>12.7 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">pybullet</th>
+          <td>12.4 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">pyqt5-tools</th>
+          <td>12.0 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">casadi</th>
+          <td>11.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">tensorflow-cpu</th>
+          <td>11.4 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">deepspeech</th>
+          <td>11.4 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">matplotlib</th>
+          <td>11.1 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">mxnet-cu75mkl</th>
+          <td>10.9 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">cityenergyanalyst</th>
+          <td>10.9 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">cntk-gpu</th>
+          <td>10.8 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">kolibri</th>
+          <td>10.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">xpress</th>
+          <td>10.2 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">nimbusml</th>
+          <td>10.1 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">cupy-cuda102</th>
+          <td>9.8 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">taichi-nightly</th>
+          <td>9.2 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">inlineplz</th>
+          <td>9.2 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">ray</th>
+          <td>8.8 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">Fiona</th>
+          <td>8.8 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">ARC-Alkali-Rydberg-Calculator</th>
+          <td>8.7 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">spacy</th>
+          <td>8.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">jaxlib</th>
+          <td>8.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">nlpia</th>
+          <td>8.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">ccxt</th>
+          <td>8.5 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">bohrium-api</th>
+          <td>8.4 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">turicreate</th>
+          <td>8.1 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">pandas</th>
+          <td>7.9 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">taichi-nightly-cuda-10-1</th>
+          <td>7.8 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">dgl-cu92</th>
+          <td>7.7 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">pynets</th>
+          <td>7.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">pantsbuild.pants</th>
+          <td>7.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">itk-filtering</th>
+          <td>7.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">dgl-cu100</th>
+          <td>7.6 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">gensim</th>
+          <td>7.5 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">botocore</th>
+          <td>7.4 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">dgl-cu90</th>
+          <td>7.3 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">SimpleITK</th>
+          <td>7.2 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">snappy</th>
+          <td>7.1 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">gym-retro</th>
+          <td>7.0 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">h2o</th>
+          <td>7.0 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">pycryptodome</th>
+          <td>6.9 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">pmagpy</th>
+          <td>6.8 GB</td>
+        </tr>
+        
+        <tr>
+          <th scope="row">reynir</th>
+          <td>6.8 GB</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer__logo">
+        <img src="/static/images/white-cube.8c3a6fe9.svg" alt="" class="-js-white-cube">
+      </div>
+
+      <div class="footer__menus">
+        <div class="footer__menu">
+          <h2>Help</h2>
+          <nav aria-label="Help navigation">
+            <ul>
+              <li><a href="https://packaging.python.org/installing/" title="External link" target="_blank" rel="noopener">Installing packages</a></li>
+              <li><a href="https://packaging.python.org/tutorials/packaging-projects/" title="External link" target="_blank" rel="noopener">Uploading packages</a></li>
+              <li><a href="https://packaging.python.org/" title="External link" target="_blank" rel="noopener">User guide</a></li>
+              <li><a href="/help/">FAQs</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer__menu">
+          <h2>About PyPI</h2>
+          <nav aria-label="About PyPI navigation">
+            <ul>
+              <li><a href="https://twitter.com/PyPI" title="External link" target="_blank" rel="noopener">PyPI on Twitter</a></li>
+              <li><a href="https://dtdg.co/pypi" title="External link" target="_blank" rel="noopener">Infrastructure dashboard</a></li>
+              <li><a href="https://www.python.org/dev/peps/pep-0541/" title="External link" target="_blank" rel="noopener">Package index name retention</a></li>
+              <li><a href="/sponsors/">Our sponsors</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer__menu">
+          <h2>Contributing to PyPI</h2>
+          <nav aria-label="How to contribute navigation">
+            <ul>
+              <li><a href="/help/#feedback">Bugs and feedback</a></li>
+              <li><a href="https://github.com/pypa/warehouse" title="External link" target="_blank" rel="noopener">Contribute on GitHub</a></li>
+              <li><a href="https://hosted.weblate.org/projects/pypa/warehouse/" title="External link" target="_blank" rel="noopener">Translate PyPI</a></li>
+              <li><a href="https://github.com/pypa/warehouse/graphs/contributors" title="External link" target="_blank" rel="noopener">Development credits</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer__menu">
+          <h2>Using PyPI</h2>
+          <nav aria-label="Using PyPI navigation">
+            <ul>
+              <li><a href="https://www.pypa.io/en/latest/code-of-conduct/" title="External link" target="_blank" rel="noopener">Code of conduct</a></li>
+              <li><a href="/security/">Report security issue</a></li>
+              <li><a href="https://www.python.org/privacy/" title="External link" target="_blank" rel="noopener">Privacy policy</a></li>
+              <li><a href="/policy/terms-of-use/">Terms of use</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <hr class="footer__divider">
+
+      <div class="footer__text">
+        
+        <p>Status: <a href="https://status.python.org/" title="External link" target="_blank" rel="noopener">
+          <span data-statuspage-domain="https://2p66nmmycsj3.statuspage.io">all systems operational</span></a>
+        </p>
+        
+        <p>
+          Developed and maintained by the Python community, for the Python community.
+          <br>
+          <a href="https://donate.pypi.org">Donate today!</a>
+        </p>
+        <p>© 2020 <a href="https://www.python.org/psf/" title="External link" target="_blank" rel="noopener">Python Software Foundation</a><br>
+          <a href="/sitemap/">Site map</a>
+        </p>
+      </div>
+
+      <div class="centered hide-on-desktop">
+        <button type="button" class="button button--switch-to-desktop hidden" data-target="viewport-toggle.switchToDesktop" data-action="viewport-toggle#switchToDesktop">
+          Switch to desktop version
+        </button>
+      </div>
+    </footer>
+
+
+    <div class="language-switcher">
+      <form action="/locale/">
+        <ul>
+          
+          <li>
+            <button class="language-switcher__selected" name="locale_id" value="en" type="submit">English</button>
+          </li>
+          
+          <li>
+            <button class="" name="locale_id" value="es" type="submit">español</button>
+          </li>
+          
+          <li>
+            <button class="" name="locale_id" value="fr" type="submit">français</button>
+          </li>
+          
+          <li>
+            <button class="" name="locale_id" value="ja" type="submit">日本語</button>
+          </li>
+          
+          <li>
+            <button class="" name="locale_id" value="pt_BR" type="submit">Português Brasileiro</button>
+          </li>
+          
+          <li>
+            <button class="" name="locale_id" value="uk" type="submit">Українська</button>
+          </li>
+          
+          <li>
+            <button class="" name="locale_id" value="el" type="submit">Ελληνικά</button>
+          </li>
+          
+          <li>
+            <button class="" name="locale_id" value="de" type="submit">Deutsch</button>
+          </li>
+          
+        </ul>
+      </form>
+    </div>
+
+
+    
+
+<div class="sponsors">
+  <p class="sponsors__title">Supported by</p>
+  
+    
+      <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.pingdom.com/">
+        <img class="sponsors__image" alt="Pingdom" src="/static/images/sponsors/white/pingdom.277dedc4.png">
+        <span class="sponsors__name">Pingdom</span>
+        <span class="sponsors__service">Monitoring</span>
+      </a>
+    
+  
+    
+      <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://cloud.google.com/">
+        <img class="sponsors__image" alt="Google" src="/static/images/sponsors/white/google.32d8a2de.png">
+        <span class="sponsors__name">Google</span>
+        <span class="sponsors__service">Object Storage and Download Analytics</span>
+      </a>
+    
+  
+    
+      <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://getsentry.com/for/python">
+        <img class="sponsors__image" alt="Sentry" src="/static/images/sponsors/white/sentry.55260f07.png">
+        <span class="sponsors__name">Sentry</span>
+        <span class="sponsors__service">Error logging</span>
+      </a>
+    
+  
+    
+      <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://aws.amazon.com/">
+        <img class="sponsors__image" alt="AWS" src="/static/images/sponsors/white/aws.9f9c77f7.png">
+        <span class="sponsors__name">AWS</span>
+        <span class="sponsors__service">Cloud computing</span>
+      </a>
+    
+  
+    
+      <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.datadoghq.com/">
+        <img class="sponsors__image" alt="DataDog" src="/static/images/sponsors/white/datadog.d16bd2ef.png">
+        <span class="sponsors__name">DataDog</span>
+        <span class="sponsors__service">Monitoring</span>
+      </a>
+    
+  
+    
+      <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.fastly.com/">
+        <img class="sponsors__image" alt="Fastly" src="/static/images/sponsors/white/fastly.dc317a48.png">
+        <span class="sponsors__name">Fastly</span>
+        <span class="sponsors__service">CDN</span>
+      </a>
+    
+  
+    
+      <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.digicert.com/">
+        <img class="sponsors__image" alt="DigiCert" src="/static/images/sponsors/white/digicert.7d655136.png">
+        <span class="sponsors__name">DigiCert</span>
+        <span class="sponsors__service">EV certificate</span>
+      </a>
+    
+  
+    
+      <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://statuspage.io">
+        <img class="sponsors__image" alt="StatusPage" src="/static/images/sponsors/white/statuspage.62f130cc.png">
+        <span class="sponsors__name">StatusPage</span>
+        <span class="sponsors__service">Status page</span>
+      </a>
+    
+  
+</div>
+
+    
+  </body>
+
+</html>

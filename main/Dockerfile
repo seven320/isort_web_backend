@@ -8,7 +8,7 @@ RUN pip install isort
 # COPY ./main /main
 
 # isortのデフォルト設定を外部からコピー
-COPY isort_setting.txt $XDG_CONFIG_HOME/.isort.cfg 
+COPY src/isort_setting_new.txt $XDG_CONFIG_HOME/.isort.cfg 
 
 
 EXPOSE 8001
