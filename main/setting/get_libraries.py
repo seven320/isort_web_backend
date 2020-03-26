@@ -31,7 +31,11 @@ def make_isort_setting_file():
             libraries = list(set(libraries + new_libraries)) # add new
             ls[i] = "known_third_party=" + ",".join(libraries) + "\n"
 
+    # 更新作業
     with open(path, mode = "w") as f:
+        f.writelines(ls)
+    
+    with open("src/.isort.cfg", mode = "w") as f:
         f.writelines(ls)
 
 if __name__ == "__main__":

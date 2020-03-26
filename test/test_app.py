@@ -8,7 +8,6 @@ from falcon import testing
 import sample_app
 import json
 
-
 class MyTestCase(testing.TestCase):
     def setUp(self):
         super(MyTestCase, self).setUp()
@@ -20,16 +19,23 @@ class TestMyApp(MyTestCase):
         doc = {u'message': u'hello falcon'}
         result = self.simulate_get("/")
         self.assertEqual(result.json, doc)
-        self.assertEqual(result.status, falcon.HTTP_200)
 
     def test_post_message(self):
         body = {u'message': u'import hoge\nimport numpy as np'}
         headers = {"Content-Type": "application/json"}
         result = self.simulate_post("/", body = json.dumps(body), headers = headers)
 
-        doc = {u'message':u'import numpy as np\n\nimport hoge'}
+        doc = {u'message':u'import numpy as np\n\nimport hoge\n'}
         self.assertEqual(result.json, doc)
-        self.assertEqual(result.status, falcon.HTTP_200)
+
+    def test_sort(self):
+        body = {u'message':u'import json\nimport falcon\nfrom isort import SortImports'}
+        headers = {"Content-Type": "application/json"}
+        result = self.simulate_post("/", body = json.dumps(body), headers = headers)
+
+        doc = {u'message': u'import json\n\nimport falcon\nfrom isort import SortImports\n'}
+        self.assertEqual(result.json, doc)
+
         
 if __name__ == "__main__":
     unittest.main()
