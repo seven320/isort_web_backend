@@ -2,11 +2,12 @@ FROM python:3.8-alpine
 
 RUN apk update && apk --no-cache add \
     ca-certificates \
-    make 
+    make \
+    curl
 
 RUN pip install --upgrade pip
 RUN pip install \
-    isort==4.3.21 \
+    isort==4.3.20 \
     falcon==2.0.0
 
 
@@ -16,5 +17,7 @@ RUN pip install \
 # COPY setting/isort_setting.txt $XDG_CONFIG_HOME/.isort.cfg 
 COPY src/* src/
 
-EXPOSE 8001
+EXPOSE 3000
 
+RUN chmod +x ./src/
+CMD ["python3", "./src/app.py"]
