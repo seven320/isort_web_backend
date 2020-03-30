@@ -2,7 +2,19 @@
 import requests
 import json
 
-def get_libraries():
+def get_byhand_libraries():
+    path = "setting/byhand_libraries.txt"
+    with open(path) as f:
+        ls = f.readlines()
+
+    byhand_libraries = []
+    for l in ls:
+        l = l.rstrip("\n")
+        byhand_libraries += l.split(",")
+
+    return byhand_libraries
+
+def get_new_libraries():
     """
     https://hugovk.github.io/top-pypi-packages/
     を用いてtop4000の有名パッケージを返す
@@ -13,30 +25,54 @@ def get_libraries():
     print(values["last_update"])
     values_rows = values["rows"]
 
-    libraries = []
+    new_libraries = []
     for values_row in values_rows:
-        libraries.append(values_row["project"])
+        new_libraries.append(values_row["project"])
+
+    return new_libraries
+
+def get_old_libraries():
+    old_libraries = []
+    with open("setting/old_libraries.txt") as f:
+        ls = f.readlines()
+    
+    for l in ls:
+        l = l.rstrip("\n")
+        old_libraries += l.split(",")
+
+    return old_libraries
+
+def update_old_libraries(libraries):
+    with open("setting/old_libraries.txt", mode="w") as f:
+        f.writelines(",".join(libraries))
+
+def get_libraries():
+    libraries = []
+
+    libraries += get_old_libraries()
+    libraries += get_new_libraries()
+    libraries = list(set(libraries))
+    update_old_libraries(libraries)
+
+    libraries += get_byhand_libraries()
+    libraries = list(set(libraries))
 
     return libraries
 
 def make_isort_setting_file():
-    new_libraries = get_libraries()
-    path = "setting/isort_setting.txt"
+    libraries = get_libraries()
+    path = "setting/isort_exam_setting.txt"
     with open(path) as f:
         ls = f.readlines()
 
     for i in range(len(ls)):
         if "known_third_party" in ls[i]:
-            libraries = ls[i].rstrip("\n").split("=")[-1].split(",")
-            libraries = list(set(libraries + new_libraries)) # add new
             ls[i] = "known_third_party=" + ",".join(libraries) + "\n"
 
     # 更新作業
-    with open(path, mode = "w") as f:
-        f.writelines(ls)
-    
     with open("src/.isort.cfg", mode = "w") as f:
         f.writelines(ls)
 
 if __name__ == "__main__":
+    # print(len(get_libraries()))
     make_isort_setting_file()

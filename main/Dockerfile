@@ -1,5 +1,7 @@
 FROM python:3.8-alpine
 
+MAINTAINER KenKato <github: seven320>
+
 RUN apk update && apk --no-cache add \
     ca-certificates \
     make \
@@ -16,6 +18,7 @@ RUN pip install \
 # isortのデフォルト設定を外部からコピー
 # COPY setting/isort_setting.txt $XDG_CONFIG_HOME/.isort.cfg 
 COPY src/* src/
+
 
 EXPOSE 3000
 

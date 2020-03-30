@@ -8,7 +8,7 @@ curl/post:
 	-d '{"message":"import numpy as np\nimport sys, os"}' \
 	-v \
 	127.0.0.1:3000
-	
+
 test:
 	python3 test_app.py
 

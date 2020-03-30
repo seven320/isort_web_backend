@@ -16,7 +16,7 @@ class MyTestCase(testing.TestCase):
 
 class TestMyApp(MyTestCase):
     def test_get_message(self):
-        doc = {u'message': u'hello falcon'}
+        doc = {u'message': u'hello Pisort'}
         result = self.simulate_get("/")
         self.assertEqual(result.json, doc)
 
@@ -34,7 +34,8 @@ class TestMyApp(MyTestCase):
         "import hometamon\n"
         "import numpy as np\n"
         "import json\n"
-        "import os, sys")}
+        "import os, sys\n"
+        "import cv2")}
         headers = {"Content-Type": "application/json"}
 
         result = self.simulate_post("/", body = json.dumps(body), headers = headers)
@@ -45,6 +46,7 @@ class TestMyApp(MyTestCase):
         'import sys\n'
         'import json\n\n'
         '# Third Party Library\n'
+        'import cv2\n'
         'import numpy as np\n\n'
         '# My Stuff\n'
         'import hometamon\n')}

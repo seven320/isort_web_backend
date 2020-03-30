@@ -5,6 +5,7 @@ import sys
 import json
 
 # Third Party Library
+import cv2
 import numpy as np
 
 # My Stuff

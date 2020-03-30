@@ -1,7 +1,6 @@
 # encoding: utf-8
 
 import json
-
 import falcon
 from isort import SortImports
 
@@ -20,7 +19,7 @@ class AppResource(object):
     def on_get(self, req, resp):
         """Handles GET requests """
         msg = {
-            "message":"hello falcon"
+            "message":"hello Pisort"
         }
         resp.status = falcon.HTTP_200
         resp.body = json.dumps(msg)
