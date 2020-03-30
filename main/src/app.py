@@ -44,5 +44,5 @@ if __name__ == "__main__":
     from wsgiref import simple_server
 
     app = create_app()
-    httpd = simple_server.make_server("0.0.0.0", 3000, app)
+    httpd = simple_server.make_server("0.0.0.0", 8080, app)
     httpd.serve_forever()

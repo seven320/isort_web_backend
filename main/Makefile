@@ -4,7 +4,7 @@ build:
 
 run:
 	docker run -it --rm --name isort \
-	-p 8080:3000 -d \
+	-p 8080:8080 -d \
 	python:3.8-alpine-isort
 	
 re-run:

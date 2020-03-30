@@ -20,7 +20,7 @@ RUN pip install \
 COPY src/* src/
 
 
-EXPOSE 3000
+EXPOSE 8080
 
 RUN chmod +x ./src/
 CMD ["python3", "./src/app.py"]

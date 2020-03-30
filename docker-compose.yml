@@ -1,15 +1,15 @@
 version: '3'
 
 services:
-  pisort-api:
-    build: ./main
-    restart: true
-    tty: true
-    ports:
-      - 8080:3000
-		networks:
-			- nginx
+    pisort-api:
+        build: ./main
+        restart: always
+        tty: true
+        ports:
+            - 8080:8080
+        networks:
+            - nginx
     
 networks: 
-	nginx:
-		external: true
+    nginx:
+        external: true
