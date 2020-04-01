@@ -6,7 +6,7 @@ from isort import SortImports
 
 class HandleCORS(object):
     def process_request(self, req, resp):
-        resp.set_header('Acess-Control-Allow-Origin', '*')
+        resp.set_header('Access-Control-Allow-Origin', '*')
 
 def sort_libraries(libraries):
     path = "sorted_file"
