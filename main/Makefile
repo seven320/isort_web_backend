@@ -25,7 +25,8 @@ curl/post: # docker で8080->3000につなぐ
 	127.0.0.1:8080
 
 curl/server:
-	curl -XPOST -H '{Content-Type:application/json}' \
+	curl -request POST \
+	--header "Content-type:application/json" \
 	-d '{"message":"import numpy as np\nimport sys,os"}' \
 	-v \
 	https://pisorts.denden.app/

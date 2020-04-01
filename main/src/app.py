@@ -8,7 +8,7 @@ class HandleCORS(object):
     def process_request(self, req, resp):
         resp.set_header('Access-Control-Allow-Origin', '*')
         resp.set_header('Access-Control-Allow-Methods','GET, POST') # 動作していいmethodを定義
-        resp.set_header('Cotent-type','application/json')
+        resp.set_header('Access-Control-Allow-Headers','*')
 
 def sort_libraries(libraries):
     path = "sorted_file"
