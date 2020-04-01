@@ -70,7 +70,7 @@ def make_isort_setting_file():
             ls[i] = "known_third_party=" + ",".join(libraries) + "\n"
 
     # 更新作業
-    with open("src/.isort.cfg", mode = "w") as f:
+    with open("setting/isort_setting.txt", mode = "w") as f:
         f.writelines(ls)
 
 if __name__ == "__main__":
