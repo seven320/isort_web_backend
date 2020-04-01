@@ -4,6 +4,10 @@ import json
 import falcon
 from isort import SortImports
 
+class HandleCORS(object):
+    def process_request(self, req, resp):
+        resp.set_header('Acess-Control-Allow-Origin', '*')
+
 def sort_libraries(libraries):
     path = "sorted_file"
     with open(path, mode = "w") as f:
@@ -35,7 +39,7 @@ class AppResource(object):
         res.body = json.dumps(msg)
 
 def create_app():
-    app = falcon.API()
+    app = falcon.API(middleware = [HandleCORS()])
     app.add_route("/", AppResource())
 
     return app
