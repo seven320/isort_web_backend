@@ -1,5 +1,4 @@
 build:
-	python3 setting/get_libraries.py
 	docker build -t python:3.8-alpine-isort --no-cache .
 
 run:

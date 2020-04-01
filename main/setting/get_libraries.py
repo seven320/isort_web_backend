@@ -3,7 +3,7 @@ import requests
 import json
 
 def get_byhand_libraries():
-    path = "setting/byhand_libraries.txt"
+    path = "main/setting/byhand_libraries.txt"
     with open(path) as f:
         ls = f.readlines()
 
@@ -33,7 +33,7 @@ def get_new_libraries():
 
 def get_old_libraries():
     old_libraries = []
-    with open("setting/old_libraries.txt") as f:
+    with open("main/setting/old_libraries.txt") as f:
         ls = f.readlines()
     
     for l in ls:
@@ -43,7 +43,7 @@ def get_old_libraries():
     return old_libraries
 
 def update_old_libraries(libraries):
-    with open("setting/old_libraries.txt", mode="w") as f:
+    with open("main/setting/old_libraries.txt", mode="w") as f:
         f.writelines(",".join(libraries))
 
 def get_libraries():
@@ -61,7 +61,7 @@ def get_libraries():
 
 def make_isort_setting_file():
     libraries = get_libraries()
-    path = "setting/isort_exam_setting.txt"
+    path = "main/setting/isort_exam_setting.txt"
     with open(path) as f:
         ls = f.readlines()
 
@@ -70,7 +70,7 @@ def make_isort_setting_file():
             ls[i] = "known_third_party=" + ",".join(libraries) + "\n"
 
     # 更新作業
-    with open("setting/isort_setting.txt", mode = "w") as f:
+    with open("main/setting/isort_setting.txt", mode = "w") as f:
         f.writelines(ls)
 
 if __name__ == "__main__":
