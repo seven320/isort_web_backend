@@ -19,6 +19,10 @@ def sort_libraries(libraries):
 
     with open(path) as f:
         sorted_doc = f.read()
+    print(sorted_doc)
+
+    sorted_doc = sorted_doc.rstrip("\n")
+    print(sorted_doc)
     return sorted_doc
 
 class AppResource(object):
@@ -32,6 +36,11 @@ class AppResource(object):
 
     def on_post(self, req, res):
         doc = json.loads(req.bounded_stream.read())
+
+        try: 
+            message = doc["message"]
+        except:
+            raise falcon.HTTPBadRequest()
 
         sorted_doc = sort_libraries(doc["message"])
 

@@ -25,7 +25,7 @@ class TestMyApp(MyTestCase):
         headers = {"Content-Type": "application/json"}
         result = self.simulate_post("/", body = json.dumps(body), headers = headers)
 
-        doc = {u'message':u'hello post\n'}
+        doc = {u'message':u'hello post'}
         self.assertEqual(result.json, doc)
 
     def test_post_sort(self):
@@ -49,9 +49,22 @@ class TestMyApp(MyTestCase):
         'import cv2\n'
         'import numpy as np\n\n'
         '# My Stuff\n'
-        'import hometamon\n')}
-        print(result.json)
+        'import hometamon')}
         self.assertEqual(result.json, doc)
+
+    def test_post_null(self):
+        body = {u'message':()}
+        headers = {}
+        result = self.simulate_post("/", body = json.dumps(body), headers = headers)
+
+        doc = {u'message':('')}
+        self.assertEqual(result.json, doc)
+
+    def test_post_bad_request(self):
+        body = {}
+        result = self.simulate_post("/", body = json.dumps(body))
+        print(result)
+        self.assertEqual(result.status, "400 Bad Request")
 
 if __name__ == "__main__":
     unittest.main()
