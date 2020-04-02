@@ -11,6 +11,4 @@ length_sort=1
 forced_separate=django.contrib,django.utils
 default_section=FIRSTPARTY
 no_lines_before=LOCALFOLDER
-import_heading_stdlib=Standard Library
-import_heading_thirdparty=Third Party Library
-import_heading_firstparty=My Stuff
+
