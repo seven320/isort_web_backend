@@ -41,14 +41,11 @@ class TestMyApp(MyTestCase):
         result = self.simulate_post("/", body = json.dumps(body), headers = headers)
         doc = {u'message':(
         u'# encoding: utf-8\n'
-        '# Standard Library\n'
         'import os\n'
         'import sys\n'
         'import json\n\n'
-        '# Third Party Library\n'
         'import cv2\n'
         'import numpy as np\n\n'
-        '# My Stuff\n'
         'import hometamon')}
         self.assertEqual(result.json, doc)
 
