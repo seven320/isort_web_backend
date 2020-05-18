@@ -1,6 +1,7 @@
 # encoding:utf-8
 import requests
 import json
+import os
 
 def get_byhand_libraries():
     path = "main/setting/byhand_libraries.txt"
@@ -70,7 +71,9 @@ def make_isort_setting_file():
             ls[i] = "known_third_party=" + ",".join(libraries) + "\n"
 
     # 更新作業
-    with open("main/setting/isort_setting.txt", mode = "w") as f:
+    with open("main/setting/.isort.cfg", mode = "w") as f:
+        f.writelines(ls)
+    with open(os.environ["HOME"] + "/.isort.cfg", mode = "w") as f:
         f.writelines(ls)
 
 if __name__ == "__main__":

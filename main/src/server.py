@@ -14,22 +14,17 @@ def sort_libraries(libraries):
     path = "sorted_file"
     with open(path, mode = "w") as f:
         f.writelines(libraries)
-
     SortImports("sorted_file")
-
-    with open(path) as f:
+    with open(path, mode = "r") as f:
         sorted_doc = f.read()
-    print(sorted_doc)
-
     sorted_doc = sorted_doc.rstrip("\n")
-    print(sorted_doc)
     return sorted_doc
 
 class AppResource(object):
     def on_get(self, req, resp):
         """Handles GET requests """
         msg = {
-            "message":"hello Pisort"
+            "message":"Hello Pisort"
         }
         resp.status = falcon.HTTP_200
         resp.body = json.dumps(msg)
