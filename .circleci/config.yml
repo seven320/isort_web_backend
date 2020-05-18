@@ -1,11 +1,11 @@
-version: 2
+version: 2 # circle ci のversion
 
 jobs:
   build:
     docker:
       - image: circleci/python:3.8
 
-      working_directory: ~/main
+    working_directory: ~/mai
 
       - run:
         name: install dependencies
