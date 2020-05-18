@@ -21,7 +21,7 @@ jobs:
       - run:
           name: get libraries
           command: | 
-            python setting/get_libraries.py
+            python main/setting/get_libraries.py
 
       - run:
           name: Test
@@ -30,4 +30,4 @@ jobs:
             pytest --junitxml=test-reports/junit.xml
 
       - store_test_results:
-          path: test-reports
+          path: main/test-reports
