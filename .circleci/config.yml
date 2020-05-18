@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: circleci/python:3.8
 
-    working_directory: ~/mai
+    working_directory: ~/main
 
     steps:
       - checkout 
@@ -21,7 +21,7 @@ jobs:
       - run:
           name: get libraries
           command: | 
-            python3 setting/get_libraries.py
+            python setting/get_libraries.py
 
       - run:
           name: Test
