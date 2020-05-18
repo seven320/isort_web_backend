@@ -1,0 +1,30 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.8
+
+      working_directory: ~/main
+
+      - run:
+        name: install dependencies
+        command: |
+          pip install falcon==2.0.0
+          pip install isort==4.3.4
+          pip install pytest==5.4.1
+          pip install pytest-mock==3.1.0
+
+      - run:
+        name: get libraries
+        command: | 
+          python3 setting/get_libraries.py
+
+      - run:
+        name: Test
+        command: |
+          mkdir test-reports
+          pytest --junitxml=test-reports/junit.xml
+
+      - store_test_results:
+        path: test-reports
