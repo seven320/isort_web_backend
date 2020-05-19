@@ -10,7 +10,7 @@ re-run:
 	make build run
 
 exec:
-	docker exec -i -t isort /bin/sh
+	docker exec -i -t isort_web_backend_pisort_1 /bin/sh
 
 curl:
 	curl -X GET -v 127.0.0.1:8080

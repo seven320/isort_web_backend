@@ -10,7 +10,8 @@ RUN apk update && apk --no-cache add \
 RUN pip install --upgrade pip
 RUN pip install \
     isort==4.3.20 \
-    falcon==2.0.0
+    falcon==2.0.0 \
+    requests 2.23.0
 
 # isortのデフォルト設定を外部からコピー
 
