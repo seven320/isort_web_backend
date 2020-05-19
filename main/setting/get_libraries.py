@@ -59,7 +59,7 @@ def update_old_libraries(libraries):
 def get_libraries():
     libraries = []
 
-    # libraries += get_old_libraries()
+    libraries += get_old_libraries()
     libraries += get_new_libraries()
     libraries = list(set(libraries))
     update_old_libraries(libraries)
@@ -83,7 +83,7 @@ def make_isort_setting_file():
     # 更新作業
     with open(get_abs_dirname() + "/.isort.cfg", mode = "w") as f:
         f.writelines(ls)
-    with open(os.environ["HOME"] + "/.isort.cfg", mode = "w") as f:
+    with open("main/src/.isort.cfg", mode = "w") as f:
         f.writelines(ls)
 
 if __name__ == "__main__":

@@ -15,14 +15,11 @@ RUN pip install \
 
 # isortのデフォルト設定を外部からコピー
 
+# 先にsettingを済ませないとサーバーの値が更新されない?
 COPY setting/* setting/
+COPY tests/* tests/
 COPY src/* src/
-COPY setting/.isort.cfg ~/.isort.cfg
+COPY setting/.isort.cfg $XDG_CONFIG_HOME/.isort.cfg 
 
 EXPOSE 8080
-
-RUN chmod +x ./setting/
-CMD ["python3", "./setting/get_libraries.py"]
-
-RUN chmod +x ./src/
-CMD ["python3", "./src/server.py"]
+CMD ["python3", "src/server.py"]
