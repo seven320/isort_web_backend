@@ -13,10 +13,15 @@ RUN pip install \
     falcon==2.0.0
 
 # isortのデフォルト設定を外部からコピー
+
+COPY setting/* setting/
 COPY src/* src/
 COPY setting/.isort.cfg ~/.isort.cfg
 
 EXPOSE 8080
+
+RUN chmod +x ./setting/
+CMD ["python3", "./setting/get_libraries.py"]
 
 RUN chmod +x ./src/
 CMD ["python3", "./src/server.py"]

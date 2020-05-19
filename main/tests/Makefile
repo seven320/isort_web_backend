@@ -8,7 +8,6 @@ curl/local/post:
 	curl -POST \
 	-H 'Content-Type:application/json' \
 	-d '{"message":"import a\nimport z\nimport az"}' \
-	-vv \
 	0.0.0.0:8080
 
 curl:
