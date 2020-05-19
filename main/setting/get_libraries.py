@@ -3,8 +3,11 @@ import requests
 import json
 import os
 
+def get_abs_dirname():
+    return str(os.path.dirname(os.path.abspath(__file__)))
+
 def get_byhand_libraries():
-    path = "./byhand_libraries.txt"
+    path = get_abs_dirname() + "/byhand_libraries.txt"
     with open(path) as f:
         ls = f.readlines()
 
@@ -40,7 +43,7 @@ def get_new_libraries():
 
 def get_old_libraries():
     old_libraries = []
-    with open("./old_libraries.txt") as f:
+    with open(get_abs_dirname() + "/old_libraries.txt") as f:
         ls = f.readlines()
     
     for l in ls:
@@ -50,7 +53,7 @@ def get_old_libraries():
     return old_libraries
 
 def update_old_libraries(libraries):
-    with open("./old_libraries.txt", mode="w") as f:
+    with open(get_abs_dirname() + "/old_libraries.txt", mode="w") as f:
         f.writelines(",".join(libraries))
 
 def get_libraries():
@@ -69,7 +72,7 @@ def get_libraries():
 def make_isort_setting_file():
     libraries = get_libraries()
     # check_python_text_inlibraries(libraries)
-    path = "./isort_exam_setting.txt"
+    path = get_abs_dirname() + "/isort_exam_setting.txt"
     with open(path) as f:
         ls = f.readlines()
 
@@ -78,7 +81,7 @@ def make_isort_setting_file():
             ls[i] = "known_third_party=" + ",".join(libraries) + "\n"
 
     # 更新作業
-    with open(".isort.cfg", mode = "w") as f:
+    with open(get_abs_dirname() + "/.isort.cfg", mode = "w") as f:
         f.writelines(ls)
     with open(os.environ["HOME"] + "/.isort.cfg", mode = "w") as f:
         f.writelines(ls)
