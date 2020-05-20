@@ -83,7 +83,7 @@ def make_isort_setting_file():
     # 更新作業
     with open(get_abs_dirname() + "/.isort.cfg", mode = "w") as f:
         f.writelines(ls)
-    with open("main/src/.isort.cfg", mode = "w") as f:
+    with open(str(os.environ["HOME"]) + ".isort.cfg", mode = "w") as f:
         f.writelines(ls)
 
 if __name__ == "__main__":

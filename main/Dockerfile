@@ -11,6 +11,8 @@ RUN pip install --upgrade pip
 RUN pip install \
     isort==4.3.20 \
     falcon==2.0.0 \
+    pytest==5.4.1 \
+    pytest-mock==3.1.0 \
     requests==2.23.0
 
 # isortのデフォルト設定を外部からコピー
@@ -20,6 +22,7 @@ COPY setting/* setting/
 COPY tests/* tests/
 COPY src/* src/
 COPY setting/.isort.cfg $XDG_CONFIG_HOME/.isort.cfg 
+# CMD ["python3", "setting/get_libraries.py"]
 
 EXPOSE 8080
 CMD ["python3", "src/server.py"]

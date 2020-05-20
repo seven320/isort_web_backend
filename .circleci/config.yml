@@ -19,11 +19,16 @@ jobs:
             pip install pytest-mock==3.1.0
             pip install requests==2.23.0
 
-      - run:
-          name: get libraries
-          command: | 
-            python main/setting/get_libraries.py
+      # - run:
+      #     name: get libraries
+      #     command: | 
+      #       python main/setting/get_libraries.py
 
+      - run:
+          name: Copy setting file
+          command: |
+            cp main/main/setting/.isort.cfg $XDG_CONFIG_HOME/.isort.cfg 
+            
       - run:
           name: Test
           command: |
