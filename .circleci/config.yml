@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Copy setting file
           command: |
-            cp main/main/setting/.isort.cfg $XDG_CONFIG_HOME/.isort.cfg 
+            cp main/setting/.isort.cfg $XDG_CONFIG_HOME/.isort.cfg 
             
       - run:
           name: Test

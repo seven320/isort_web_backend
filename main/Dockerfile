@@ -22,7 +22,6 @@ COPY setting/* setting/
 COPY tests/* tests/
 COPY src/* src/
 COPY setting/.isort.cfg $XDG_CONFIG_HOME/.isort.cfg 
-# CMD ["python3", "setting/get_libraries.py"]
 
 EXPOSE 8080
 CMD ["python3", "src/server.py"]
