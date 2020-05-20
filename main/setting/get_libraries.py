@@ -81,9 +81,9 @@ def make_isort_setting_file():
             ls[i] = "known_third_party=" + ",".join(libraries) + "\n"
 
     # 更新作業
-    with open(get_abs_dirname() + "/.isort.cfg", mode = "w") as f:
+    with open(get_abs_dirname() + "/.isort.cfg", mode = "w") as f: # docker 環境でcopyするのに必要
         f.writelines(ls)
-    with open(os.environ["HOME"] + "/.isort.cfg", mode = "w") as f:
+    with open(os.environ["HOME"] + "/.isort.cfg", mode = "w") as f: # circle ci のために必要
         f.writelines(ls)
 
 if __name__ == "__main__":
