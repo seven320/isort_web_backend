@@ -25,5 +25,5 @@ jobs:
             mkdir test-reports
             pytest --junitxml=test-reports/junit.xml
 
-      - store_test_results:
-          path: main/test-reports
+      # - store_test_results:
+      #     path: main/test-reports

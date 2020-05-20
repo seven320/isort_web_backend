@@ -21,7 +21,9 @@ RUN pip install \
 COPY setting/* setting/
 COPY tests/* tests/
 COPY src/* src/
-
+COPY setting/.isort.cfg ~/.isort.cfg
 
 EXPOSE 8080
-CMD ["python3", "src/server.py"]
+
+RUN chmod +x ./src/
+CMD ["python3", "srsc/server.py"]
