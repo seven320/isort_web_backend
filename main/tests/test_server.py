@@ -14,7 +14,6 @@ def app(mocker):
     app = server.create_app()
     return app
 
-
 def test_sort_libraries():
     message = ""
     expected = ""
