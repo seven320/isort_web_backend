@@ -1,1 +1,1 @@
-cv2,shape_commentator,tensorboardX,PIL,MeCab,japanize_matplotlib
+wx,cv2,shape_commentator,tensorboardX,PIL,MeCab,japanize_matplotlib
