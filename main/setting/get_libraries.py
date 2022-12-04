@@ -29,7 +29,7 @@ def get_new_libraries():
     https://hugovk.github.io/top-pypi-packages/
     を用いてtop4000の有名パッケージを返す
     """
-    url = "https://hugovk.github.io/top-pypi-packages/top-pypi-packages-365-days.json"
+    url = "https://hugovk.github.io/top-pypi-packages/top-pypi-packages-30-days.min.json"
     res = requests.get(url)
     values = json.loads(res.text)
     print(values["last_update"])
