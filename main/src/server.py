@@ -6,6 +6,15 @@ import falcon
 from isort import SortImports
 from dotenv import load_dotenv
 
+if os.path.exists("/env/.env"):
+    load_dotenv("/env/.env")
+elif os.path.exists("env/.env"):
+    load_dotenv("env/.env")
+else:
+    print("error doesn't exist .env path")
+
+API_KEY = os.environ.get("api_key")
+
 class HandleCORS(object):
     def process_request(self, req, resp):
         origin = req.get_header('Origin')
@@ -25,15 +34,8 @@ def sort_libraries(libraries):
     return sorted_doc
 
 class AppResource(object):
-    def __init__(self):
-        if os.path.exists("/env/.env"):
-            load_dotenv("/env/.env")
-        elif os.path.exists("env/.env"):
-            load_dotenv("env/.env")
-        else:
-            print("error doesn't exist .env path")
-
-        self.api_key = os.environ.get("api_key")
+    def __init__(self, api_key):
+        self.api_key = api_key
 
     def on_get(self, req, resp):
         if req.get_header('Authorization') != f'Bearer {self.api_key}':
@@ -66,6 +68,6 @@ def create_app():
 if __name__ == "__main__":
     from wsgiref import simple_server
 
-    app = create_app()
+    app = create_app(API_KEY)
     httpd = simple_server.make_server("0.0.0.0", 8080, app)
     httpd.serve_forever()
