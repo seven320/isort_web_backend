@@ -1,14 +1,27 @@
 # encoding: utf-8
 
+import os
 import json
 import falcon
 from isort import SortImports
+from dotenv import load_dotenv
+
+if os.path.exists("/env/.env"):
+    load_dotenv("/env/.env")
+elif os.path.exists("env/.env"):
+    load_dotenv("env/.env")
+else:
+    print("error doesn't exist .env path")
+
+API_KEY = os.environ.get("api_key")
 
 class HandleCORS(object):
     def process_request(self, req, resp):
-        resp.set_header('Access-Control-Allow-Origin', '*')
-        resp.set_header('Access-Control-Allow-Methods','GET, POST') # 動作していいmethodを定義
-        resp.set_header('Access-Control-Allow-Headers','*')
+        origin = req.get_header('Origin')
+        if origin is not None and origin == 'https://www.pisort.denden.app':
+            resp.set_header('Access-Control-Allow-Origin', origin)
+            resp.set_header('Access-Control-Allow-Methods', 'GET, POST')
+            resp.set_header('Access-Control-Allow-Headers', '*')
 
 def sort_libraries(libraries):
     path = "sorted_file"
@@ -21,17 +34,19 @@ def sort_libraries(libraries):
     return sorted_doc
 
 class AppResource(object):
+    def __init__(self, api_key):
+        self.api_key = api_key
+
     def on_get(self, req, resp):
-        """Handles GET requests """
-        msg = {
-            "message":"Hello Pisort"
-        }
-        resp.status = falcon.HTTP_200
-        resp.body = json.dumps(msg)
+        if req.get_header('Authorization') != f'Bearer {self.api_key}':
+            raise falcon.HTTPUnauthorized()
+        resp.status = falcon.HTTP_200  # ステータスコード200を設定
+        resp.body = 'Hello World!'
 
     def on_post(self, req, res):
+        if req.get_header('Authorization') != f'Bearer {self.api_key}':
+            raise falcon.HTTPUnauthorized()
         doc = json.loads(req.bounded_stream.read())
-
         try: 
             message = doc["message"]
         except:
@@ -53,6 +68,6 @@ def create_app():
 if __name__ == "__main__":
     from wsgiref import simple_server
 
-    app = create_app()
+    app = create_app(API_KEY)
     httpd = simple_server.make_server("0.0.0.0", 8080, app)
     httpd.serve_forever()

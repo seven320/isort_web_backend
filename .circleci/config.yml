@@ -1,34 +1,34 @@
-version: 2 # circle ci のversion
+# version: 2 # circle ci のversion
 
-jobs:
-  build:
-    docker:
-      - image: circleci/python:3.8
+# jobs:
+#   build:
+#     docker:
+#       - image: circleci/python:3.8
 
-    working_directory: ~/main
+#     working_directory: ~/main
 
-    steps:
-      - checkout 
+#     steps:
+#       - checkout 
 
-      - run:
-          name: install dependencies
-          command: |
-            pip install falcon==2.0.0
-            pip install isort==4.3.4
-            pip install pytest==5.4.1
-            pip install pytest-mock==3.1.0
-            pip install requests==2.23.0
+#       - run:
+#           name: install dependencies
+#           command: |
+#             pip install falcon==2.0.0
+#             pip install isort==4.3.4
+#             pip install pytest==5.4.1
+#             pip install pytest-mock==3.1.0
+#             pip install requests==2.23.0
 
-      - run: # 中で一回実行
-          name: get libraries
-          command: |
-            python main/setting/get_libraries.py
+#       - run: # 中で一回実行
+#           name: get libraries
+#           command: |
+#             python main/setting/get_libraries.py
             
-      - run:
-          name: Test
-          command: |
-            mkdir test-reports
-            pytest --junitxml=test-reports/junit.xml
+#       - run:
+#           name: Test
+#           command: |
+#             mkdir test-reports
+#             pytest --junitxml=test-reports/junit.xml
 
-      # - store_test_results:
-      #     path: main/test-reports
+#       # - store_test_results:
+#       #     path: main/test-reports

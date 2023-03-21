@@ -9,9 +9,11 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from src import server
 
+API_KEY = "test"
+
 @pytest.fixture(scope = "function")
 def app(mocker):
-    app = server.create_app()
+    app = server.create_app(API_KEY)
     return app
 
 def test_sort_libraries():
@@ -135,6 +137,3 @@ def test_post_bad_request(app):
     body = {}
     result = app.simulate_post("/", body = json.dumps(body))
     assert result.status == "400 Bad Request"
-
-    
-

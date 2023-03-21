@@ -60,7 +60,7 @@ def get_libraries():
     libraries = []
 
     libraries += get_old_libraries()
-    libraries += get_new_libraries()
+    # libraries += get_new_libraries()
     libraries = list(set(libraries))
     update_old_libraries(libraries)
 
