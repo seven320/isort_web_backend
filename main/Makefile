@@ -23,4 +23,4 @@ post:
 	-d '{"message":"import numpy as np\nimport sys,os"}' \
 	-v http://localhost:8080/ \
 	--header "Content-type:application/json" \
-	--header "Authorization: Bearer <<>>" \
+	--header "Authorization: kBearer <<>>" \

@@ -1,15 +1,12 @@
 version: '3'
 
 services:
-    pisort:
+    backend:
         build: ./main
+        container_name: isort
         restart: always
         tty: true
         ports:
             - 8080:8080
-        networks:
-            - nginx
+
     
-networks: 
-    nginx:
-        external: true

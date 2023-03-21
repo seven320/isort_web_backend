@@ -15,3 +15,10 @@ compose/down:
 
 logs:
 	docker-compose logs
+
+test:
+	docker-compose down
+	docker-compose build 
+	docker-compose up -d
+	docker exec isort pytest tests
+	docker-compose down
