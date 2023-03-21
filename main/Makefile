@@ -15,14 +15,12 @@ re-run:
 exec:
 	docker exec -i -t isort /bin/sh
 
-
 get:
-	curl -H "Authorization: Bearer ahoaho" -v http://localhost:8080
+	curl -H "Authorization: Bearer <<>>" -v http://localhost:8080
 
 post:
 	curl -request POST \
+	-d '{"message":"import numpy as np\nimport sys,os"}' \
+	-v http://localhost:8080/ \
 	--header "Content-type:application/json" \
-	-d '{"message":"ilmport numpy as np\nimport sys,os"}' \
-	-v http://localhost:8080/
-	# -v \
-	# https://pisorts.denden.app/
+	--header "Authorization: Bearer <<>>" \

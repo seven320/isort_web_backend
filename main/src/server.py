@@ -4,6 +4,7 @@ import os
 import json
 import falcon
 from isort import SortImports
+from dotenv import load_dotenv
 
 class HandleCORS(object):
     def process_request(self, req, resp):
@@ -25,7 +26,14 @@ def sort_libraries(libraries):
 
 class AppResource(object):
     def __init__(self):
-        self.api_key = os.environ["api_key"]
+        if os.path.exists("/env/.env"):
+            load_dotenv("/env/.env")
+        elif os.path.exists("env/.env"):
+            load_dotenv("env/.env")
+        else:
+            print("error doesn't exist .env path")
+
+        self.api_key = os.environ.get("api_key")
 
     def on_get(self, req, resp):
         if req.get_header('Authorization') != f'Bearer {self.api_key}':
@@ -34,6 +42,8 @@ class AppResource(object):
         resp.body = 'Hello World!'
 
     def on_post(self, req, res):
+        if req.get_header('Authorization') != f'Bearer {self.api_key}':
+            raise falcon.HTTPUnauthorized()
         doc = json.loads(req.bounded_stream.read())
         try: 
             message = doc["message"]
