@@ -1,14 +1,17 @@
 # encoding: utf-8
 
+import os
 import json
 import falcon
 from isort import SortImports
 
 class HandleCORS(object):
     def process_request(self, req, resp):
-        resp.set_header('Access-Control-Allow-Origin', '*')
-        resp.set_header('Access-Control-Allow-Methods','GET, POST') # 動作していいmethodを定義
-        resp.set_header('Access-Control-Allow-Headers','*')
+        origin = req.get_header('Origin')
+        if origin is not None and origin == 'https://www.pisort.denden.app':
+            resp.set_header('Access-Control-Allow-Origin', origin)
+            resp.set_header('Access-Control-Allow-Methods', 'GET, POST')
+            resp.set_header('Access-Control-Allow-Headers', '*')
 
 def sort_libraries(libraries):
     path = "sorted_file"
@@ -21,17 +24,17 @@ def sort_libraries(libraries):
     return sorted_doc
 
 class AppResource(object):
+    def __init__(self):
+        self.api_key = os.environ["api_key"]
+
     def on_get(self, req, resp):
-        """Handles GET requests """
-        msg = {
-            "message":"Hello Pisort"
-        }
-        resp.status = falcon.HTTP_200
-        resp.body = json.dumps(msg)
+        if req.get_header('Authorization') != f'Bearer {self.api_key}':
+            raise falcon.HTTPUnauthorized()
+        resp.status = falcon.HTTP_200  # ステータスコード200を設定
+        resp.body = 'Hello World!'
 
     def on_post(self, req, res):
         doc = json.loads(req.bounded_stream.read())
-
         try: 
             message = doc["message"]
         except:

@@ -1,3 +1,6 @@
+stop:
+	docker stop isort 
+
 build:
 	docker build -t python:3.8-alpine-isort --no-cache .
 
@@ -10,12 +13,16 @@ re-run:
 	make build run
 
 exec:
-	docker exec -i -t isort_web_backend_pisort_1 /bin/sh
+	docker exec -i -t isort /bin/sh
 
 
-curl/server:
+get:
+	curl -H "Authorization: Bearer ahoaho" -v http://localhost:8080
+
+post:
 	curl -request POST \
 	--header "Content-type:application/json" \
-	-d '{"message":"import numpy as np\nimport sys,os"}' \
-	-v \
-	https://pisorts.denden.app/
+	-d '{"message":"ilmport numpy as np\nimport sys,os"}' \
+	-v http://localhost:8080/
+	# -v \
+	# https://pisorts.denden.app/
